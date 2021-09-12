@@ -1,0 +1,271 @@
+<mvc:View height="100%" controllerName="zcontrato.zcontrato.controller.View1" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f">
+		<f:ShellBar
+  title="Mall Plaza"
+  secondTitle="Mallplaza, juntos más vida a mi ciudad"
+  homeIcon="https://upload.wikimedia.org/wikipedia/commons/5/57/Mallplaza_2016_vertical.svg">
+  
+  
+</f:ShellBar>
+	<Shell id="shell"  backgroundImage="https://cdn.plataformaurbana.cl/wp-content/uploads/2012/06/1339377569_view_3_sin_paris_2_sin_marcas_altan-1000x659.jpg">
+		<App id="app">
+			
+			<NavContainer id="wizardNavContainer">
+				
+				<pages>
+					
+					<Page id="wizardContentPage" showHeader="true" title="Creación de Contratos">
+						<content>
+							<Wizard id="CreateProductWizard" showNextButton="false"  class="sapUiResponsivePadding--header sapUiResponsivePadding--content" complete="wizardCompletedHandler" enableBranching="true"
+							>
+								<WizardStep id="ProductTypeStep" nextStep="ProductInfoStep" title="Formulario de Oferta de Contrato" validated="true" >
+									<Text class="sapUiSmallMarginBottom" text="En esta etapa usted debe agregar los datos referentes a la fórmulario de contraro"/>
+									<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="8" labelSpanL="3" labelSpanM="3" labelSpanS="3" emptySpanXL="0"
+										emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" adjustLabelSpan="false" singleContainerFullSize="false">
+										<form:content>
+											<core:Title/>
+											<Label text="País"/>
+											<ComboBox selectedKey="{/Pais}" value="{/pais1}">
+												<core:Item key="chile" text="Chile"/>
+												<core:Item key="peru" text="Perú"/>
+												<core:Item key="colombia" text="Colombia"/>
+											</ComboBox>
+											<Label text="Template"/>
+											<ComboBox selectedKey="{/template}" value="{/template1}">
+												<core:Item key="c1" text="Contrato 1"/>
+												<core:Item key="c2" text="Contrato 2"/>
+												<core:Item key="c3" text="Contrato 3"/>
+											</ComboBox>
+											<Label text="Cebe " labelFor="InputEdit" />
+											<Input id="Input3" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/cebe1}" />
+											<core:Title/>
+											<Label text="Sociedad" />
+											<ComboBox selectedKey="{/sociedad}" value="{/sociedad1}">
+												<core:Item key="c1" text="Mall Plaza Arica"/>
+												<core:Item key="c2" text="Mall Plaza independencia 2"/>
+												<core:Item key="c3" text="Mall Plaza Egaña"/>
+											</ComboBox>
+											<Label text="Representante Legal " labelFor="InputEdit"/>
+											<Input id="Input5" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" visible="false" />
+											<Label text="Categoría"/>
+											<ComboBox selectedKey="{/categoria}"  value="{/categoria1}">
+												<core:Item key="c1" text="Contrato 1 de arriendo"/>
+												<core:Item key="c2" text="Contrato 2 de arriendo"/>
+												<core:Item key="c3" text="Contrato 3 de arriendo"/>
+											</ComboBox>
+												
+										</form:content>
+									</form:SimpleForm>
+									<Button type="Accept"
+						text="Seguir"
+						press="onPress"
+						id="btn1"
+					>
+					
+				</Button>
+								</WizardStep>
+								<WizardStep id="ProductInfoStep" validated="true" title="Interlocutores">
+									<Text text="En esta etapa puede seleccionar/modificar los datos retribuidos "/>
+									<Panel>
+										<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="8" labelSpanL="8" labelSpanM="8" labelSpanS="8" emptySpanXL="0"
+											emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" adjustLabelSpan="false" singleContainerFullSize="false">
+											<form:content>
+												<core:Title text="Interlocutores"/>
+												<Label text="Cliente " required="true"/>
+												<Input id="cliente" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/cliente}"/>
+												<Label text="Gerente comercial " required="true"/>
+												<Input id="gerenteComercial" type="Text" enabled="true" editable="true" value="{/gerentecomercial}" class="sapUiSmallMarginBottom"/>
+												<Label text="Gerente MIX " labelFor="InputEdit"/>
+												<Input id="InputEdit3" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/gerenteMix1}"/>
+												<Label text="Sub-Gerente Comercial " labelFor="InputEdit"/>
+												<Input id="InputEdit4" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/subGerenteComercial1}" />
+												<Label text="Jefe Comercial " labelFor="InputEdit"/>
+												<Input id="InputEdit5" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/jefeComercial1}" />
+												<Label text="Contrato Comercial " labelFor="InputEdit"/>
+												<Input id="InputEdit6" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/contratoComercial1}" />
+												<Label text="Representante Legal " labelFor="InputEdit"/>
+												<Input id="InputEdit7" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/representanteLegal1}" />
+												<Label text="Codeudor " labelFor="InputEdit"/>
+												<Input id="InputEdit8" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/codedudor1}"/>
+												<core:Title/>
+												<Label text="Grupo Económico " labelFor="InputEdit"/>
+												<Input id="InputEdit9" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/grupoEcononomico1}" />
+											</form:content>
+										</form:SimpleForm>
+									</Panel>
+								</WizardStep>
+								<WizardStep id="OptionalInfoStep" validated="true" activate="optionalStepActivation" title="Objetos de alquiler">
+									<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="2" labelSpanS="2" emptySpanXL="0"
+										emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" adjustLabelSpan="false">
+										<core:Title/>
+										<Label text="Unidad " labelFor="InputEdit"/>
+										<Input id="InputEdit10" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" showSuggestion="true" showValueHelp="true" value="{/unidad1}"/>
+										<Label text="Unidad " labelFor="InputEdit"/>
+										<Input id="InputEdit11" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" showSuggestion="true" showValueHelp="true" value="{/unidad2}"/>
+										<core:Title/>
+										
+									</form:SimpleForm>
+								</WizardStep>
+								<WizardStep id="PricingStep" activate="pricingActivate" complete="pricingComplete" validated="true" title="Condiciones de Objeto Principal">
+									<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="5" labelSpanS="5" emptySpanXL="0"
+										emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" adjustLabelSpan="false">
+										<core:Title/>
+										<Label text="Arriendo Mínimo " labelFor="InputEdit"/>
+										<Input id="InputEdit12" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" showSuggestion="true" showValueHelp="true" value="{/arriendoMinimo1}"/>
+										<Label text="Arriendo Porcentual " labelFor="InputEdit"/>
+										<Input id="InputEdit13" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" showSuggestion="true" showValueHelp="true" value="{/arriendoPorcentual1}"/>
+										<Label text="Fondo Promoción " labelFor="InputEdit"/>
+										<Input id="InputEdit14" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/fondoPromocion1}" />
+										<Label text="Gastos Comunes " labelFor="InputEdit"/>
+										<Input id="InputEdit15" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/gastosComunes1}" />
+										<Label text="Otros " labelFor="InputEdit"/>
+										<Input id="InputEdit16" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/otros1}"/>
+										<core:Title/>
+										<Label text="Reajustes " labelFor="InputEdit"/>
+										<Input id="InputEdit17" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/reajustes1}" />
+										<Label text="Contribuciones " labelFor="InputEdit"/>
+										<Input id="InputEdit18" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/contribuciones1}" />
+									</form:SimpleForm>
+								</WizardStep>
+								<WizardStep id="sadasd" activate="pricingActivate" complete="pricingComplete" validated="true" title="Datos Generales">
+									<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5" labelSpanM="5" labelSpanS="5" emptySpanXL="0"
+										emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" adjustLabelSpan="false">
+										<core:Title/>
+										<Label text="Marca " labelFor="InputEdit"/>
+										<Input id="asdasd" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" showSuggestion="true" showValueHelp="true" value="{/marca1}" />
+										<Label text="Edificio " labelFor="InputEdit"/>
+										<ComboBox selectedKey="{/Pais}" value="{/edificio1}" >
+											<core:Item key="chile" text="Chile"/>
+											<core:Item key="peru" text="Perú"/>
+											<core:Item key="colombia" text="Colombia"/>
+										</ComboBox>
+										<Label text="Mall " labelFor="InputEdit" />
+										<Input id="asdasd3" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true" value="{/mall1}" />
+										<Label text="Plazo " labelFor="InputEdit"/>
+										<DateTimePicker value="{ path: '/dtValue', type: 'sap.ui.model.type.DateTime'}" />
+										<Label text="Periodo " labelFor="InputEdit"/>
+										<Input id="asdasd5" class="sapUiSmallMarginBottom" type="Text" enabled="true" editable="true"  value="{/periodo1}"/>
+									</form:SimpleForm>
+								</WizardStep>
+							</Wizard>
+						</content>
+						<footer>
+							<OverflowToolbar>
+								<ToolbarSpacer/>
+								<Button text="Cancelar" press="handleWizardCancel"/>
+							</OverflowToolbar>
+						</footer>
+					</Page>
+					<Page id="wizardReviewPage" showHeader="false">
+						<content>
+							<form:SimpleForm title="1. Formulario de oferta de contrato" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+								<form:content>
+									<Label text="Pais "/>
+									<Text id="Pais" text="{/pais1}"/>
+									<Label text="Template "/>
+									<Text id="template1" text="{/template1}"/>
+									<Label text="Cebe "/>
+									<Text id="cebe1" text="{/cebe1}"/>
+									<Label text="Sociedad "/>
+									<Text id="sociedad1" text="{/sociedad1}"/>
+									<Label text="Categoría "/>
+									<Text id="categoria1" text="{/categoria1}"/>
+									<Link press="editStepTwo" text="Edit"/>
+								</form:content>
+							</form:SimpleForm>
+							<form:SimpleForm title="2. Interlocutores" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+								<form:content>
+									
+									
+									<Label text="Cliente"/>
+									<Text id="cliente1" text="{/cliente}"/>
+									<Label text="Gerente Comercial"/>
+									<Text id="gerentecomercial1" text="{/gerentecomercial}"/>
+									<Label text="Sub Gerente Comercial"/>
+									<Text id="subGerenteComercial1" text="{/subGerenteComercial1}"/>
+									<Label text="Jefe Comercial"/>
+									<Text id="jefeComercial1" text="{/jefeComercial1}"/>
+										<Label text="Contrato Comercial"/>
+									<Text id="ProductDescriptionChosen" text="{/contratoComercial1}"/>
+										<Label text="Representante Legal"/>
+									<Text id="representanteLegal1" text="{/representanteLegal1}"/>
+										<Label text="Codeudor"/>
+									<Text id="codedudor1" text="{/codedudor1}"/>
+										<Label text="Grupo Económico"/>
+									<Text id="grupoEcononomico1" text="{/grupoEcononomico1}"/>
+									<Link press="editStepTwo" text="Edit"/>
+									
+								</form:content>
+							</form:SimpleForm>
+							<form:SimpleForm title="3. Objetos de Alquiler" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+								<form:content>
+									
+									
+										<Label text="Unidad "/>
+									<Text id="unidad1" text="{/unidad1}"/>
+									<Label text="Unidad "/>
+									<Text id="unidad2" text="{/unidad2}"/>
+									
+									
+									
+									
+									
+									<Link press="editStepThree" text="Edit"/>
+								</form:content>
+							</form:SimpleForm>
+							<form:SimpleForm title="4. Condiciones del objeto Principal" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+								<form:content>
+									<Label text="Arriendo Mínimo"/>
+									<Text id="ProductPriceChosen" text="{/arriendoMinimo1}"/>
+									<Label text="Arriendo Porcentual"/>
+									<Text id="DiscountGroupChosen" text="{/arriendoPorcentual1}"/>
+									<Label text="Fondo Promoción "/>
+									<Text id="ProductVATChosen" text="{/fondoPromocion1}"/>
+								
+									<Label text="Gastos Comunes "/>
+									<Text id="DiscountGroupChosen2323" text="{/gastosComunes1}"/>
+									<Label text="Otros "/>
+									<Text id="ProductVATChose233n" text="{/otros1}"/>
+									<Label text="Reajustes "/>
+									<Text id="ProductVATChose23553n" text="{/reajustes1}"/>
+									<Label text="Contribuciones "/>
+									<Text id="ProductVATChose22333n" text="{/contribuciones1}"/>
+									
+									
+									
+									<Link press="editStepFour" text="Edit"/>
+								</form:content>
+							</form:SimpleForm>
+							
+								<form:SimpleForm title="5. Datos Generales" minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+								<form:content>
+									<Label text="Marca"/>
+									<Text id="otro" text="{/marca1}"/>
+									<Label text="Edificio"/>
+									<Text id="otro2" text="{/edificio1}"/>
+									<Label text="Mall "/>
+									<Text id="otro3" text="{/mall1}"/>
+									<Label text="Plazo "/>
+									<Text id="otro4" text="{/plazo1}"/>
+									<Label text="Periodo "/>
+									<Text id="otro5" text="{/periodo1}"/>
+									
+								</form:content>
+							</form:SimpleForm>
+							
+							
+						</content>
+						<footer>
+							<Bar>
+								<contentRight>
+									<Button text="Enviar" press="handleWizardSubmit" type="Accept"/>
+									<Button text="Cancelar" press="handleWizardCancel"  type="Reject" />
+								</contentRight>
+							</Bar>
+						</footer>
+					</Page>
+				</pages>
+			</NavContainer>
+		</App>
+	</Shell>
+</mvc:View>
